@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sl_template"
+version = "0.0.1"
+authors = [
+  { name="Corey Bevan", email="corey.bevan@googlemail.com" },
+]
+description = "Template for supervised learning"
+readme = "README.md"
+requires-python = ">=3.6"
+# Add your dependencies here
+dependencies = [
+    "requests",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "xgboost"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/CB2702/supervised_learning_template"
+
+[tool.setuptools]
+packages = ["packages"] # e.g., if you have `packages/my_app`, use `my_app`
