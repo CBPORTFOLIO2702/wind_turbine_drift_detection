@@ -1,0 +1,108 @@
+{
+  "data_profile": {
+    "shape_report": {
+      "n_rows": 50530,
+      "n_cols": 5
+    },
+    "dtype_report": {
+      "numeric_cols": [
+        "lv_active_power",
+        "wind_speed",
+        "theoretical_power_curve",
+        "wind_direction"
+      ],
+      "non_numeric_cols": []
+    }
+  },
+  "missingness": {
+    "missing_percentage": {
+      "timestamp": 0.0,
+      "lv_active_power": 0.0,
+      "wind_speed": 0.0,
+      "theoretical_power_curve": 0.0,
+      "wind_direction": 0.0
+    },
+    "alarming_cols": [],
+    "suspected_missing_at_random_numerical": {},
+    "suspected_missing_at_random_categorical": {},
+    "perc_invalid_dates": {
+      "timestamp": 0.0
+    }
+  },
+  "target_leakage": {
+    "detected_numercial_leakages": {
+      "('lv_active_power', 'wind_speed')": 0.912774291127555,
+      "('lv_active_power', 'theoretical_power_curve')": 0.9499178485832084
+    }
+  },
+  "outliers": {
+    "lv_active_power": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.0,
+      "proportion_anomalous": 0.0
+    },
+    "wind_speed": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.008371264595289927,
+      "proportion_anomalous": 0.008371264595289927
+    },
+    "theoretical_power_curve": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.0,
+      "proportion_anomalous": 0.0
+    },
+    "wind_direction": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.0,
+      "proportion_anomalous": 0.0
+    }
+  },
+  "numeric_column_distributions": {
+    "wind_speed": {
+      "mean": 7.557952236083194,
+      "std": 4.227166055611555,
+      "min": 0.0,
+      "lower_quartile": 4.201395392417902,
+      "median": 7.104593515396115,
+      "upper_quartile": 10.30001997947685,
+      "max": 25.2060108184814,
+      "skew": 0.6195073094215093,
+      "kurtosis": 0.05894246107519807
+    },
+    "theoretical_power_curve": {
+      "mean": 1492.175462958337,
+      "std": 1368.01823787267,
+      "min": 0.0,
+      "lower_quartile": 161.328167383204,
+      "median": 1063.776282578535,
+      "upper_quartile": 2964.9724615869272,
+      "max": 3600.0,
+      "skew": 0.4209943825778647,
+      "kurtosis": -1.4064520117911115
+    },
+    "wind_direction": {
+      "mean": 123.68755850939178,
+      "std": 93.44373572772608,
+      "min": 0.0,
+      "lower_quartile": 49.3154373168945,
+      "median": 73.71297836303705,
+      "upper_quartile": 201.69672012329076,
+      "max": 359.997589111328,
+      "skew": 0.696088449598005,
+      "kurtosis": -0.7479906600727029
+    }
+  },
+  "target_profile": {
+    "target_distribution": {
+      "mean": 1307.6843318793108,
+      "std": 1312.4592421268148,
+      "min": -2.47140502929687,
+      "lower_quartile": 50.6778898239135,
+      "median": 825.8380737304685,
+      "upper_quartile": 2482.507568359375,
+      "max": 3618.73291015625,
+      "skew": 0.6004684448538998,
+      "kurtosis": -1.1640535521258963
+    }
+  }
+}
