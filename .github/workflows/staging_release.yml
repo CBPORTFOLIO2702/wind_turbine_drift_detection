@@ -35,10 +35,9 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-    - name: Download and install eda_toolkit wheel
+    - name: Install anthropic
       run: |
-        curl -L -o eda_toolkit.whl "https://github.com/CBPORTFOLIO2702/eda_toolkit/releases/download/v0.1.0/eda_toolkit-0.1.0-py3-none-any.whl"
-        pip install eda_toolkit.whl
+        pip install anthropic
 
     - name: Run analysis and generate advice
       env:

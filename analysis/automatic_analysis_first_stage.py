@@ -6,7 +6,6 @@ import scipy
 import json
 import anthropic
 import hashlib
-from eda_toolkit.first_stage_report_building.ops.generate_report import build_report_regression
 
 REPORT_SCHEMA_GLOSSARY = """
 Field definitions for the EDA summary below:
