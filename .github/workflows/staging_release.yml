@@ -39,7 +39,7 @@ jobs:
     - name: Run analysis and generate advice
       env:
         ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_TOKEN }}
-      run: python generate_report.py
+      run: python analysis/automatic_analysis_first_stage.py
 
     - name: Upload advice report
       uses: actions/upload-artifact@v4
