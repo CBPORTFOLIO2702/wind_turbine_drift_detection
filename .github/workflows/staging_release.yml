@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.10"]
 
     steps:
     - uses: actions/checkout@v4
@@ -35,6 +35,8 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
+    - name: Install eda_toolkit wheel
+      run: pip install https://github.com/CBPORTFOLIO2702/eda_toolkit/releases/download/v0.1.0/eda_toolkit-0.1.0-py3-none-any.whl
 
     - name: Run analysis and generate advice
       env:
@@ -45,5 +47,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: advice-report
-        path: advice_report.md
+        path: analysis/advice_report.md
         
