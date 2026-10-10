@@ -38,6 +38,8 @@ TARGET_COL = "lv_active_power"
 BUSINESS_CONTEXT = "wind turbine power output prediction from sensor data"
 CACHE_DIR = "advice_cache"
 
+client = anthropic.Anthropic()
+
 def build_prompt(report: dict) -> str:
     return f"""You are advising on a baseline modelling approach.
 
