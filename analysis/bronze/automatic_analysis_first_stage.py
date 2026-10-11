@@ -32,7 +32,7 @@ Field definitions for the EDA summary below:
 """
 
 TARGET_COL = "lv_active_power"
-BUSINESS_CONTEXT = "wind turbine power output prediction from sensor data, to detect historic performance drift"
+BUSINESS_CONTEXT = "wind turbine power output prediction from sensor data, to predict expected output power. The goal will be to compare this to the design output power, which is a column within the dataset but not to be used as a feature."
 CACHE_DIR = "advice_cache"
 
 client = anthropic.Anthropic()
