@@ -39,10 +39,10 @@ jobs:
       run: |
         pip install anthropic
 
-    - name: Run analysis and generate advice
+    - name: Run bronze analysis and generate advice
       env:
         ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_TOKEN }}
-      run: python analysis/automatic_analysis_first_stage.py
+      run: python analysis/bronze/automatic_analysis_first_stage.py
 
     - name: Upload advice report
       uses: actions/upload-artifact@v4

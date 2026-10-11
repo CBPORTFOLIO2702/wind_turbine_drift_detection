@@ -28,10 +28,11 @@ Field definitions for the EDA summary below:
   Skew > ~1 and kurtosis > ~3 indicate meaningful departure from normality.
 - target_profile.class_imbalance: proportion of rows per target class, or target distribution
   stats for regression.
+- multicolinearity: pairs of features with correlation above 0.8
 """
 
 TARGET_COL = "lv_active_power"
-BUSINESS_CONTEXT = "wind turbine power output prediction from sensor data"
+BUSINESS_CONTEXT = "wind turbine power output prediction from sensor data, to detect historic performance drift"
 CACHE_DIR = "advice_cache"
 
 client = anthropic.Anthropic()
@@ -46,7 +47,7 @@ The prediction target is: {TARGET_COL}
 The business context is: {BUSINESS_CONTEXT}
 
 Suggest:
-1. A baseline model family and why
+1. A feature engineering strategy to proceed with before modelling
 2. Key risks flagged by the EDA that the approach should account for
 3. What NOT to do given the flagged issues (e.g. leakage columns to drop)
 """
