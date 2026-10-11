@@ -6,9 +6,12 @@ name: Python package
 on:
   pull_request:
     branches: 
-    - TESTFORNOW
+    - staging
     paths:
-    - "analysis/silver/**"
+    - "analysis/gold/**"
+
+permissions:
+  pull-requests: write
 
 jobs:
   build:
