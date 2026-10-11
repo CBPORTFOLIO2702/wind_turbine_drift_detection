@@ -42,15 +42,14 @@ def build_prompt(report: dict) -> str:
 
 {REPORT_SCHEMA_GLOSSARY}
 
-Here is a structured EDA summary for this dataset: {json.dumps(report, indent=2)}
+Here is a structured EDA summary for this dataset post feature engineering: {json.dumps(report, indent=2)}
 The prediction target is: {TARGET_COL}
 The business context is: {BUSINESS_CONTEXT}
 
 Write:
-1. A written description of EDA summary report
-2. A feature engineering strategy to proceed with before modelling
-3. Key risks flagged by the EDA that the approach should account for
-4. What NOT to do given the flagged issues (e.g. leakage columns to drop)
+1. A modelling strategy including a short description of the approach, and
+2. A list of features to include in the model, with a short justification for each.
+3. A cross validation and optimization strategy if necessary.
 """
 
 
