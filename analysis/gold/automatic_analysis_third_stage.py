@@ -1,4 +1,4 @@
-
+# TEST
 import os 
 import json
 import anthropic
@@ -98,7 +98,7 @@ def get_or_generate_advice(prompt: str) -> str:
 
 
 def main():
-    with open("analysis/gold/eda_report.json", "r") as f:
+    with open("analysis/gold/model_report.json", "r") as f:
         
       report = json.load(f)
 
