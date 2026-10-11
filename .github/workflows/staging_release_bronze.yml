@@ -10,6 +10,9 @@ on:
     paths:
     - "analysis/bronze/**"
 
+permissions:
+  pull-requests: write
+
 jobs:
   build:
 
