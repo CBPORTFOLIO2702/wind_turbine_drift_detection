@@ -7,6 +7,11 @@ on:
   pull_request:
     branches: 
     - staging
+    paths:
+    - "analysis/bronze/**"
+
+permissions:
+  pull-requests: write
 
 jobs:
   build:
@@ -48,5 +53,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: advice-report
+        path: advice_report.md
+        
+    - name: Post advice as PR comment
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        header: bronze-advice
         path: advice_report.md
         

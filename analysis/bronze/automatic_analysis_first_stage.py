@@ -48,9 +48,8 @@ The business context is: {BUSINESS_CONTEXT}
 
 Write:
 1. A written description of EDA summary report
-2. A feature engineering strategy to proceed with before modelling
-3. Key risks flagged by the EDA that the approach should account for
-4. What NOT to do given the flagged issues (e.g. leakage columns to drop)
+2. A data cleaning strategy for the dataset which will handle missing values, outliers, and other issues.
+3. A feature engineering strategy based on the modelling scope, including feature selection, feature transformation, and feature creation.
 """
 
 
