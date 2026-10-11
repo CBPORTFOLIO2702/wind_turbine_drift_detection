@@ -46,10 +46,11 @@ Here is a structured EDA summary for this dataset: {json.dumps(report, indent=2)
 The prediction target is: {TARGET_COL}
 The business context is: {BUSINESS_CONTEXT}
 
-Suggest:
-1. A feature engineering strategy to proceed with before modelling
-2. Key risks flagged by the EDA that the approach should account for
-3. What NOT to do given the flagged issues (e.g. leakage columns to drop)
+Write:
+1. A written description of EDA summary report
+2. A feature engineering strategy to proceed with before modelling
+3. Key risks flagged by the EDA that the approach should account for
+4. What NOT to do given the flagged issues (e.g. leakage columns to drop)
 """
 
 
