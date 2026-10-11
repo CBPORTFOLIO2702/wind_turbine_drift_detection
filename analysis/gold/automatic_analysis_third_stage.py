@@ -1,4 +1,4 @@
-# TEST
+
 import os 
 import json
 import anthropic
@@ -67,6 +67,10 @@ Write:
 2. Next steps for model improvements
 3. A list of 3-5 feature engineering ideas to improve the model
 4. A list of 3-5 hyperparameter tuning ideas to improve the model
+
+Constraints:
+- Keep as concise as possible so that the report does not get truncated.
+- Ensure that advice is prioritised. This report is meant to help someone make thier model better.
 """
 
 
@@ -98,7 +102,7 @@ def get_or_generate_advice(prompt: str) -> str:
 
 
 def main():
-    with open("analysis/gold/model_report.json", "r") as f:
+    with open("analysis/gold/eda_report.json", "r") as f:
         
       report = json.load(f)
 
