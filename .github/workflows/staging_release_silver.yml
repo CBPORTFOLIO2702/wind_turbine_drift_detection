@@ -9,6 +9,9 @@ on:
     - staging
     paths:
     - "analysis/silver/**"
+    
+permissions:
+  pull-requests: write
 
 jobs:
   build:
