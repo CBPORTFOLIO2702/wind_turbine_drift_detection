@@ -6,9 +6,12 @@ name: Python package
 on:
   pull_request:
     branches: 
-    - TESTFORNOW
+    - staging
     paths:
-    - "analysis/silver/**"
+    - "analysis/gold/**"
+
+permissions:
+  pull-requests: write
 
 jobs:
   build:
@@ -44,7 +47,7 @@ jobs:
     - name: Run gold analysis and generate advice
       env:
         ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_TOKEN }}
-      run: python analysis/gold/automatic_analysis_first_stage.py
+      run: python analysis/gold/automatic_analysis_third_stage.py
 
     - name: Upload advice report
       uses: actions/upload-artifact@v4
