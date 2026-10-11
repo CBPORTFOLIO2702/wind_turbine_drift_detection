@@ -68,7 +68,7 @@ def get_or_generate_advice(prompt: str) -> str:
 
     response = client.messages.create(
     model="claude-sonnet-5",
-    max_tokens=1000,
+    max_tokens=2000,
     thinking={"type": "disabled"},
     messages=[{"role": "user", "content": prompt}],
     )
