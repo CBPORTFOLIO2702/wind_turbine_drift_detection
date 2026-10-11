@@ -8,7 +8,7 @@ on:
     branches: 
     - staging
     paths:
-    - "analysis/gold/**"
+    - "analysis/silver/**"
 
 jobs:
   build:
@@ -50,5 +50,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: advice-report
+        path: advice_report.md
+
+    - name: Post advice as PR comment
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        header: silver-advice
         path: advice_report.md
         
