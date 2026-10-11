@@ -25,3 +25,6 @@ dependencies = [
 
 [tool.setuptools]
 packages = ["packages"] # e.g., if you have `packages/my_app`, use `my_app`
+
+[tool.databricks.environment]
+environment_version = '6'
