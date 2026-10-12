@@ -49,6 +49,8 @@ Write:
 1. A modelling strategy including a short description of the approach, and
 2. A list of features to include in the model, with a short justification for each.
 3. A cross validation and optimization strategy if necessary.
+
+Constraints: Please keep the word count below 2000 words, so be concise in your report.
 """
 
 
