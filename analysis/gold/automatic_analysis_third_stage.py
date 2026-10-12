@@ -67,6 +67,8 @@ Write:
 2. Next steps for model improvements
 3. A list of 3-5 feature engineering ideas to improve the model
 4. A list of 3-5 hyperparameter tuning ideas to improve the model
+
+Constraints: Please keep the word count below 2000 words, so be concise in your report.
 """
 
 
