@@ -2,7 +2,7 @@
   "data_profile": {
     "shape_report": {
       "n_rows": 50528,
-      "n_cols": 14
+      "n_cols": 22
     },
     "dtype_report": {
       "numeric_cols": [
@@ -14,9 +14,17 @@
         "wind_direction_rad",
         "wind_magnitude_i",
         "wind_magnitude_j",
-        "wind_magnitude_i_3h_rolling",
-        "wind_magnitude_j_3h_rolling",
-        "wind_speed_3h_rolling"
+        "wind_speed_x3",
+        "wind_magnitude_i_3h_rolling_mean",
+        "wind_magnitude_j_3h_rolling_mean",
+        "wind_magntitue_i_3h_rolling_std",
+        "wind_magntitue_j_3h_rolling_std",
+        "wind_speed_3h_rolling_mean",
+        "wind_speed_3h_rolling_std",
+        "wind_direction_3h_rolling_mean",
+        "wind_direction_3h_rolling_std",
+        "wind_speed_x3_3h_rolling_mean",
+        "wind_speed_x3_3h_rolling_std"
       ],
       "non_numeric_cols": []
     }
@@ -34,9 +42,17 @@
       "wind_direction_rad": 0.0,
       "wind_magnitude_i": 0.0,
       "wind_magnitude_j": 0.0,
-      "wind_magnitude_i_3h_rolling": 0.0,
-      "wind_magnitude_j_3h_rolling": 0.0,
-      "wind_speed_3h_rolling": 0.0
+      "wind_speed_x3": 0.0,
+      "wind_magnitude_i_3h_rolling_mean": 0.0,
+      "wind_magnitude_j_3h_rolling_mean": 0.0,
+      "wind_magntitue_i_3h_rolling_std": 0.0,
+      "wind_magntitue_j_3h_rolling_std": 0.0,
+      "wind_speed_3h_rolling_mean": 0.0,
+      "wind_speed_3h_rolling_std": 0.0,
+      "wind_direction_3h_rolling_mean": 0.0,
+      "wind_direction_3h_rolling_std": 0.0,
+      "wind_speed_x3_3h_rolling_mean": 0.0,
+      "wind_speed_x3_3h_rolling_std": 0.0
     },
     "alarming_cols": [],
     "suspected_missing_at_random_numerical": {},
@@ -48,7 +64,7 @@
   "target_leakage": {
     "detected_numercial_leakages": {
       "('lv_active_power', 'wind_speed')": 0.9127737427037725,
-      "('lv_active_power', 'wind_speed_3h_rolling')": 0.9079253198116695
+      "('lv_active_power', 'wind_speed_3h_rolling_mean')": 0.9079253198116695
     }
   },
   "outliers": {
@@ -92,20 +108,60 @@
       "proportion_over_threshold": 0.0,
       "proportion_anomalous": 0.0007718492716909436
     },
-    "wind_magnitude_i_3h_rolling": {
+    "wind_speed_x3": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.08175664977834073,
+      "proportion_anomalous": 0.08175664977834073
+    },
+    "wind_magnitude_i_3h_rolling_mean": {
       "proportion_under_threshold": 0.049437935402153264,
       "proportion_over_threshold": 0.00025728309056364786,
       "proportion_anomalous": 0.04969521849271691
     },
-    "wind_magnitude_j_3h_rolling": {
+    "wind_magnitude_j_3h_rolling_mean": {
       "proportion_under_threshold": 0.0005739392020265991,
       "proportion_over_threshold": 0.0,
       "proportion_anomalous": 0.0005739392020265991
     },
-    "wind_speed_3h_rolling": {
+    "wind_magntitue_i_3h_rolling_std": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.05052644078530716,
+      "proportion_anomalous": 0.05052644078530716
+    },
+    "wind_magntitue_j_3h_rolling_std": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.04929939835338822,
+      "proportion_anomalous": 0.04929939835338822
+    },
+    "wind_speed_3h_rolling_mean": {
       "proportion_under_threshold": 0.0,
       "proportion_over_threshold": 0.008213267891070297,
       "proportion_anomalous": 0.008213267891070297
+    },
+    "wind_speed_3h_rolling_std": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.04654844838505383,
+      "proportion_anomalous": 0.04654844838505383
+    },
+    "wind_direction_3h_rolling_mean": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.0,
+      "proportion_anomalous": 0.0
+    },
+    "wind_direction_3h_rolling_std": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.1108692210259658,
+      "proportion_anomalous": 0.1108692210259658
+    },
+    "wind_speed_x3_3h_rolling_mean": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.08023274224192527,
+      "proportion_anomalous": 0.08023274224192527
+    },
+    "wind_speed_x3_3h_rolling_std": {
+      "proportion_under_threshold": 0.0,
+      "proportion_over_threshold": 0.08838663711209627,
+      "proportion_anomalous": 0.08838663711209627
     }
   },
   "numeric_column_distributions": {
@@ -186,7 +242,18 @@
       "skew": -0.11502790808773165,
       "kurtosis": -0.5019079035228264
     },
-    "wind_magnitude_i_3h_rolling": {
+    "wind_speed_x3": {
+      "mean": 883.6998785874467,
+      "std": 1393.5082474802327,
+      "min": 0.0,
+      "lower_quartile": 74.15341070699975,
+      "median": 358.6554093662625,
+      "upper_quartile": 1092.7970256794683,
+      "max": 16014.462062145829,
+      "skew": 3.237573265321589,
+      "kurtosis": 14.071390360840212
+    },
+    "wind_magnitude_i_3h_rolling_mean": {
       "mean": 0.36201703496506504,
       "std": 6.5638528786951715,
       "min": -24.035704295010877,
@@ -197,7 +264,7 @@
       "skew": -0.9739711395245891,
       "kurtosis": 0.6408815992272987
     },
-    "wind_magnitude_j_3h_rolling": {
+    "wind_magnitude_j_3h_rolling_mean": {
       "mean": 2.076048484497868,
       "std": 5.192550210852983,
       "min": -15.427771275705773,
@@ -208,7 +275,29 @@
       "skew": -0.1120524383128889,
       "kurtosis": -0.5224308568860301
     },
-    "wind_speed_3h_rolling": {
+    "wind_magntitue_i_3h_rolling_std": {
+      "mean": 0.4456041832949101,
+      "std": 0.45724254520344954,
+      "min": 0.0010954266352718837,
+      "lower_quartile": 0.2005172256607946,
+      "median": 0.34058739082655276,
+      "upper_quartile": 0.5608276036095086,
+      "max": 18.243098238127562,
+      "skew": 8.911847747809402,
+      "kurtosis": 196.50637435002318
+    },
+    "wind_magntitue_j_3h_rolling_std": {
+      "mean": 0.4456380879918847,
+      "std": 0.38955599352376996,
+      "min": 0.0,
+      "lower_quartile": 0.2057392916668098,
+      "median": 0.35299047234625647,
+      "upper_quartile": 0.5688444092475656,
+      "max": 8.966445242846756,
+      "skew": 4.301958107949296,
+      "kurtosis": 45.96776732551476
+    },
+    "wind_speed_3h_rolling_mean": {
       "mean": 7.557950077839786,
       "std": 4.198454668986474,
       "min": 0.247468963265419,
@@ -218,6 +307,61 @@
       "max": 24.30164337158197,
       "skew": 0.6221933069739899,
       "kurtosis": 0.054586995106999936
+    },
+    "wind_speed_3h_rolling_std": {
+      "mean": 0.4632046733376515,
+      "std": 0.386108191724484,
+      "min": 0.0023319680754124053,
+      "lower_quartile": 0.21835928923566045,
+      "median": 0.3701069767596561,
+      "upper_quartile": 0.5971088486126244,
+      "max": 10.268282291606653,
+      "skew": 4.182415610447285,
+      "kurtosis": 51.96998025034736
+    },
+    "wind_direction_3h_rolling_mean": {
+      "mean": 123.6856100667986,
+      "std": 90.07911507742772,
+      "min": 0.0,
+      "lower_quartile": 50.71546872456881,
+      "median": 74.97635777791342,
+      "upper_quartile": 201.4207687377929,
+      "max": 358.9786071777343,
+      "skew": 0.6430371333469108,
+      "kurtosis": -0.8523505759402332
+    },
+    "wind_direction_3h_rolling_std": {
+      "mean": 9.381317580518699,
+      "std": 28.950125984555992,
+      "min": 0.0,
+      "lower_quartile": 1.357060565667732,
+      "median": 2.6078663380810556,
+      "upper_quartile": 5.581033443499685,
+      "max": 207.6470898306391,
+      "skew": 5.643119158859411,
+      "kurtosis": 32.033675918705335
+    },
+    "wind_speed_x3_3h_rolling_mean": {
+      "mean": 883.6846456847483,
+      "std": 1381.4248096465076,
+      "min": 0.016798740741048375,
+      "lower_quartile": 77.00831305898097,
+      "median": 363.27574153811156,
+      "upper_quartile": 1098.0490823308874,
+      "max": 14381.862335578917,
+      "skew": 3.2015776606688435,
+      "kurtosis": 13.663542620797308
+    },
+    "wind_speed_x3_3h_rolling_std": {
+      "mean": 116.69666954466256,
+      "std": 191.5528974032346,
+      "min": 0.005400521762901962,
+      "lower_quartile": 14.720116501845657,
+      "median": 48.97761055439972,
+      "upper_quartile": 138.70438865318246,
+      "max": 3786.0240750125568,
+      "skew": 4.8091654324594195,
+      "kurtosis": 43.1240272751436
     }
   },
   "target_profile": {
@@ -233,5 +377,5 @@
       "kurtosis": -1.1641319000285772
     }
   },
-  "multicolinearity": "                             wind_speed  ...  wind_speed_3h_rolling\nwind_speed                     1.000000  ...               0.991664\nwind_direction                -0.077163  ...              -0.076848\nsine_hour                     -0.052527  ...              -0.048939\ncosine_hour                    0.086369  ...               0.089358\nwind_direction_rad            -0.077163  ...              -0.076848\nwind_magnitude_i              -0.260345  ...              -0.261705\nwind_magnitude_j               0.090470  ...               0.089557\nwind_magnitude_i_3h_rolling   -0.260006  ...              -0.262402\nwind_magnitude_j_3h_rolling    0.088479  ...               0.089713\nwind_speed_3h_rolling          0.991664  ...               1.000000\n\n[10 rows x 10 columns]"
+  "multicolinearity": "                                  wind_speed  ...  wind_speed_x3_3h_rolling_std\nwind_speed                          1.000000  ...                      0.650396\nwind_direction                     -0.077163  ...                      0.047674\nsine_hour                          -0.052527  ...                     -0.002715\ncosine_hour                         0.086369  ...                      0.011853\nwind_direction_rad                 -0.077163  ...                      0.047674\nwind_magnitude_i                   -0.260345  ...                     -0.272386\nwind_magnitude_j                    0.090470  ...                     -0.080569\nwind_speed_x3                       0.865763  ...                      0.685767\nwind_magnitude_i_3h_rolling_mean   -0.260006  ...                     -0.276602\nwind_magnitude_j_3h_rolling_mean    0.088479  ...                     -0.079807\nwind_magntitue_i_3h_rolling_std     0.048672  ...                      0.409221\nwind_magntitue_j_3h_rolling_std     0.091446  ...                      0.366807\nwind_speed_3h_rolling_mean          0.991664  ...                      0.657011\nwind_speed_3h_rolling_std           0.154336  ...                      0.627711\nwind_direction_3h_rolling_mean     -0.081160  ...                      0.048571\nwind_direction_3h_rolling_std      -0.262627  ...                     -0.093658\nwind_speed_x3_3h_rolling_mean       0.860609  ...                      0.694171\nwind_speed_x3_3h_rolling_std        0.650396  ...                      1.000000\n\n[18 rows x 18 columns]"
 }
